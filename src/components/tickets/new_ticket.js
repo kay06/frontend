@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class NewTicket extends Component {
+class NewTicket extends Component {
   constructor(props) {
     super(props);
 
@@ -24,12 +24,11 @@ export default class NewTicket extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    const { phone_number, title, description } = this.state;
+    const { title, description } = this.state;
 
     axios
       .post("http://127.0.0.1:5000/new_ticket", {
         user_id: "1",
-        phone_number: phone_number,
         title: title,
         description: description
       })
@@ -47,16 +46,6 @@ export default class NewTicket extends Component {
         <h1>Create a New Ticket</h1>
 
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <input
-              type="text"
-              name="phone_number"
-              placeholder="Phone Number"
-              value={this.state.phone_number}
-              onChange={this.handleChange}
-            />
-          </div>
-
           <div>
             <input
               type="text"
@@ -82,3 +71,5 @@ export default class NewTicket extends Component {
     );
   }
 }
+
+export default NewTicket;

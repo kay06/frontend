@@ -1,7 +1,7 @@
 import React from "react";
-import catPresident from "../pictures/about/cat_president.jpg"
+import catPresident from "../../pictures/about/cat_president.jpg"
 
-export default function About() {
+function About() {
   return (
     <div className="d-flex justify-content-between align-items-center">
       <img
@@ -16,3 +16,4 @@ export default function About() {
   );
 }
 
+export default About;

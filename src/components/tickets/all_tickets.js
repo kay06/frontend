@@ -18,6 +18,8 @@ const AllTickets = () => {
     }
   };
 
+
+
   return (
     <div className="all-tickets-container">
       <h1>All Tickets</h1>
@@ -26,8 +28,8 @@ const AllTickets = () => {
           <li key={ticket.id}>
             <Link to={`/ticket/${ticket.id}`}>
               <p>id: {ticket.id}</p>
-              <p>Title: {ticket.title}</p>
             </Link>
+              <p>Title: {ticket.title}</p>
               <p>Description: {ticket.description}</p>
               <p>Status: {ticket.status}</p>
           </li>

@@ -1,13 +1,14 @@
 import React from "react";
 
-import BootstrapCarousel from "../bootstrap_features/bootstrap-carousel";
-import Navigation from "../navigation/navigation";
-import ComputerCat from "../pictures/home/cat_computer.jpg"
+import BootstrapCarousel from "../../bootstrap_features/bootstrap-carousel";
+import ComputerCat from "../../pictures/home/cat_computer.jpg"
 
 
 
 
-export default function Home() {
+ function Home() {
+
+
   return (
     <div className="d-flex flex-column justify-content-between align-items-center">
       <BootstrapCarousel/>
@@ -32,3 +33,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

@@ -1,13 +1,12 @@
 import React from "react";
-import { Row, Col, Container, Carousel } from 'react-bootstrap';
-import BootstrapCarousel from "../bootstrap_features/bootstrap-carousel";
-import Computer from "../pictures/services/computer.jpg"
-import Electronics from "../pictures/services/electronics.jpg"
-import Hardware from "../pictures/services/hardware.jpg"
-import Social from "../pictures/services/social.jpg"
+import BootstrapCarousel from "../../bootstrap_features/bootstrap-carousel";
+import Computer from "../../pictures/services/computer.jpg"
+import Electronics from "../../pictures/services/electronics.jpg"
+import Hardware from "../../pictures/services/hardware.jpg"
+import Social from "../../pictures/services/social.jpg"
 
 
-export default function Services() {
+function Services() {
   return (
     <div className="d-flex flex-column justify-content-between align-items-center">
       <BootstrapCarousel/>
@@ -40,3 +39,5 @@ export default function Services() {
     </div>
   );
 }
+
+export default Services;

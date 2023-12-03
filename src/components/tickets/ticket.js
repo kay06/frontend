@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
@@ -7,28 +7,35 @@ const Ticket = () => {
   const [newStatus, setNewStatus] = useState('');
   const { id } = useParams();
 
-  useEffect(() => {
-    fetchTicket();
-  });
-
-  const fetchTicket = async () => {
+  const fetchTicket = useCallback(async () => {
     try {
       const response = await axios.get(`http://127.0.0.1:5000/ticket/${id}`);
       setTicket(response.data);
+      console.log("ticket success")
     } catch (error) {
       console.error('Error fetching ticket:', error);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchTicket();
+  }, [fetchTicket]);
 
   const handleStatusChange = async () => {
-    try {
-      await axios.put(`http://127.0.0.1:5000/edit_ticket`, {
-        id: ticket.id,
-        status: newStatus,
-      });
-      setTicket({ ...ticket, status: newStatus });
-    } catch (error) {
-      console.error('Error updating status:', error);
+
+    if (newStatus) { 
+      try {
+        await axios.put(`http://127.0.0.1:5000/edit_ticket/${id}`, {
+          id: ticket.id,
+          status: newStatus
+        });
+        setTicket({ ...ticket, status: newStatus });
+      } catch (error) {
+        console.error('Error updating status:', error);
+      }
+    }else{
+      alert("What the heck no status")
+      console.log("error no status given")
     }
   };
 
