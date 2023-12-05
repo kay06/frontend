@@ -1,12 +1,20 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Logo from '../pictures/navigation/catLogo.jpg';
 
 function Navigation({ isLoggedIn, handleLogout }) {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand as={Link} to="/">Logo</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          <img
+            src={Logo}
+            alt="Your Logo"
+            height="75"
+            
+          />
+        </Navbar.Brand>
         <Nav className="me-auto">
           <div className='d-flex justify-content-between'>
             <Nav.Link as={Link} to="/">Home</Nav.Link>

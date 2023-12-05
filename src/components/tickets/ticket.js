@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDumpsterFire } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
+
+library.add(faDumpsterFire);
 const Ticket = () => {
   const [ticket, setTicket] = useState({});
   const [newStatus, setNewStatus] = useState('');
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const fetchTicket = useCallback(async () => {
     try {
@@ -34,23 +41,57 @@ const Ticket = () => {
         console.error('Error updating status:', error);
       }
     }else{
-      alert("What the heck no status")
+      alert("Please give a status")
       console.log("error no status given")
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://127.0.0.1:5000/delete_ticket/${id}`);
+      console.log('Ticket deleted successfully');
+      navigate('/tickets')
+    } catch (error) {
+      console.error('Error deleting ticket:', error);
     }
   };
 
   return (
     <div className="ticket-container">
-      <h1>{ticket.title}</h1>
-      <p>Description: {ticket.description}</p>
-      <p>Status: {ticket.status}</p>
       <div>
-        <input
-          type="text"
-          value={newStatus}
-          onChange={(e) => setNewStatus(e.target.value)}
-        />
-        <button onClick={handleStatusChange}>Update Status</button>
+        <h1>{ticket.title}</h1>
+        <p>Description: {ticket.description}</p>
+        <p>Status: {ticket.status}</p>
+      </div>
+      <div>
+        <div className='TicketOptions'>
+          <p>Update your status below</p>
+          <input
+              type="radio"
+              id="option1"
+              name="statusOption"
+              value="In Progress"
+              checked={ticket.status === "In Progress"}
+              onChange={() => setNewStatus("In Progress")}
+            />
+            <label htmlFor="option1">In Progress</label>
+
+            <input
+              type="radio"
+              id="option2"
+              name="statusOption"
+              value="Finished"
+              checked={ticket.status === "Finished"}
+              onChange={() => setNewStatus("Finished")}
+            />
+            <label htmlFor="option2">Finished</label>
+          </div>
+          <div className='TicketButtons'>
+            <button onClick={handleStatusChange}>Update Status</button>
+            <button onClick={handleDelete}>
+              <FontAwesomeIcon icon={faDumpsterFire} />
+            </button>
+          </div>
       </div>
     </div>
   );

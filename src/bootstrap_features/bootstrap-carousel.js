@@ -8,7 +8,6 @@ function BootstrapCarousel() {
     <Carousel>
         <Carousel.Item>
           <img
-            className="d-block w-100"
             src={catItMan}
             alt="Cat Is IT"
           />
@@ -19,7 +18,6 @@ function BootstrapCarousel() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
             src={catRepair}
             alt="Cat Is Repair"
           />
@@ -30,7 +28,6 @@ function BootstrapCarousel() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
             src={catProgram}
             alt="Cat Is Program"
           />
