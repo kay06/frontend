@@ -1,30 +1,26 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
-class NewTicket extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      phone_number: "",
-      title: "",
-      description: ""
-    };
+const NewTicket = () => {
+  const [ticketDetails, setTicketDetails] = useState({
+    phone_number: "",
+    title: "",
+    description: ""
+  });
+  const navigate = useNavigate();
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setTicketDetails({ ...ticketDetails, [name]: value });
+  };
 
-  handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    const { title, description } = this.state;
+    const { title, description } = ticketDetails;
 
     axios
       .post("http://127.0.0.1:5000/new_ticket", {
@@ -32,44 +28,47 @@ class NewTicket extends Component {
         title: title,
         description: description
       })
-      .then(response => {
+      .then((response) => {
         console.log("Ticket created:", response.data);
+        navigate('/tickets')
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error creating ticket:", error);
       });
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <h1>Create a New Ticket</h1>
+  return (
+    <div className="new-ticket-container">
+      <h1>Create a New Ticket</h1>
 
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input
-              type="text"
-              name="title"
-              placeholder="Title"
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-          </div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={ticketDetails.title}
+            onChange={handleChange}
+            className="ticket-input"
+          />
+        </div>
 
-          <div>
-            <textarea
-              name="description"
-              placeholder="Description"
-              value={this.state.description}
-              onChange={this.handleChange}
-            />
-          </div>
+        <div>
+          <textarea
+            name="description"
+            placeholder="Description"
+            value={ticketDetails.description}
+            onChange={handleChange}
+            className="ticket-textarea"
+          />
+        </div>
 
-          <button type="submit">Create Ticket</button>
-        </form>
-      </div>
-    );
-  }
-}
+        <button type="submit" className="create-ticket-btn">
+          Create Ticket
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default NewTicket;

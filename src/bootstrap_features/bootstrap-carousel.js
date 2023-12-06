@@ -3,9 +3,9 @@ import catItMan from '../pictures/carousel/cat_it_man.jpg'
 import catRepair from '../pictures/carousel/cat_repair.jpg'
 import catProgram from '../pictures/carousel/cat_program.jpg'
 
-function BootstrapCarousel() {
+function BootstrapCarousel({ className }) {
   return (
-    <Carousel>
+    <Carousel className={className}>
         <Carousel.Item>
           <img
             src={catItMan}
@@ -13,7 +13,6 @@ function BootstrapCarousel() {
           />
           <Carousel.Caption>
             <h3>Cat Is IT</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -23,7 +22,6 @@ function BootstrapCarousel() {
           />
           <Carousel.Caption>
             <h3>Cat Is Repair</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -33,9 +31,6 @@ function BootstrapCarousel() {
           />
           <Carousel.Caption>
             <h3>Cat Is Program</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
           </Carousel.Caption>
         </Carousel.Item>
     </Carousel>

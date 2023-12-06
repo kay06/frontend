@@ -1,0 +1,37 @@
+.all-tickets-container {
+  padding: 20px;
+}
+
+.ticket-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ticket {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+
+  .ticket-link {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      text-decoration: none;
+      color: black; 
+    }
+
+    p {
+      margin: 5px 0;
+    }
+  }
+}
+
+.ticket:hover {
+  background-color: #f0f0f0;
+}

@@ -1,0 +1,37 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .about-container img {
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin-right: 20px;
+  }
+  
+  .about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .about-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 950px 600px;
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 20px; 
+  }
+  
+  .about-paragraph {
+    
+    background-size: 950px 600px;
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 20px;
+  }

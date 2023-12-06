@@ -1,32 +1,27 @@
 import React from "react";
-
 import BootstrapCarousel from "../../bootstrap_features/bootstrap-carousel";
-import ComputerCat from "../../pictures/home/cat_computer.jpg"
+import ComputerCat from "../../pictures/home/cat_computer.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faApple, faWindows } from '@fortawesome/free-brands-svg-icons';
 
-
-
-
- function Home() {
-
-
+function Home() {
   return (
     <div className="d-flex flex-column justify-content-between align-items-center">
-      <BootstrapCarousel/>
+      <BootstrapCarousel className="custom-carousel" />
       <div className="d-flex justify-content-between align-items-center w-100">
-        <a href="https://www.facebook.com/">Facebook</a>  
-        <a href="https://twitter.com/">Twitter</a>  
-        <a href="https://www.apple.com/">Apple</a>  
-        <a href="https://www.microsoft.com/en-us/">Windows</a> 
+        <a href="https://www.facebook.com/"><FontAwesomeIcon icon={faFacebook} className="fa-icon" /></a>  
+        <a href="https://twitter.com/"><FontAwesomeIcon icon={faTwitter} className="fa-icon" /></a>  
+        <a href="https://www.apple.com/"><FontAwesomeIcon icon={faApple} className="fa-icon" /></a>  
+        <a href="https://www.microsoft.com/en-us/"><FontAwesomeIcon icon={faWindows} className="fa-icon" /></a> 
       </div>
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="bottom-content">
         <img
-            className="h-50 w-50"
-            src={ComputerCat}
-            alt="Computer Cat"
-          />
-        <div className="align-items-center">
-          <p>sign up now</p>
-          <p>to make a ticket now</p>
+          src={ComputerCat}
+          alt="Computer Cat"
+        />
+        <div className="text-content">
+          <p>Sign up Meow</p>
+          <p>to Make a Ticket</p>
           <a href="/signup">Sign Up</a>        
         </div>
       </div>

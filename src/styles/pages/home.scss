@@ -1,0 +1,52 @@
+.fa-icon {
+    font-size: 36px;
+    color: black; 
+    padding: 40px;
+  }
+
+/* homeStyles.scss */
+
+/* Styles for the Home component */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px; /* Add padding to the bottom */
+  }
+  
+  .bottom-content {
+    font-size: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Align items in the center vertically */
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px /* Add margin at the top of the bottom content */
+  }
+  
+  .bottom-content img {
+    height: 50%;
+    width: 450px;
+    border-radius: 25px;
+  }
+  
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align text content */
+    text-align: center; /* Center align text */
+  }
+  
+  .text-content p {
+    font-weight: bold; /* Make paragraphs bold */
+    margin-bottom: 10px; /* Add margin between paragraphs */
+  }
+  
+  .text-content a {
+    display: block; /* Ensure "Sign Up" link takes the full width */
+    text-align: center; /* Center align the "Sign Up" link */
+  }
+  
+  
+  

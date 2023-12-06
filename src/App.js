@@ -11,7 +11,7 @@ import AllTickets from './components/tickets/all_tickets';
 import Ticket from './components/tickets/ticket';
 import Login from './components/auth/login'
 import Signup from './components/auth/signup';
-import BottomNavigation from './navigation/botton_nav';
+import './styles/main.scss'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -48,7 +48,6 @@ return (
           ): null}
         
         </Routes>
-      <BottomNavigation/>
   </div>
   )
 }

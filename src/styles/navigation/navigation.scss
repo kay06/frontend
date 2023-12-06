@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #343a40;
+  }
+  
+  .navbar-brand {
+    img {
+      height: 60px; 
+      margin-right: 10px; /* Add margin to separate the logo from other links */
+      margin-left: -75px;
+    }
+  }
+  
+  // Left-aligned items styles
+  .navbar-nav.left-items {
+    display: flex;
+    align-items: center;
+  }
+  
+  // Right-aligned items styles
+  .navbar-nav.right-items {
+    display: flex;
+    align-items: center;
+    margin-right: -75px;
+    }
+  
+  // Style the links within the navbar
+  .navbar-nav a.nav-link {
+    color: #ffffff; /* Link text color */
+    margin-right: 10px; /* Add spacing between links */
+  }
+  
+  // Button style (for logout)
+  .navbar-nav .logout-button {
+    margin-left: 10px; /* Add margin to separate logout button */
+  }
+  

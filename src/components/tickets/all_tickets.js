@@ -18,23 +18,21 @@ const AllTickets = () => {
     }
   };
 
-
-
   return (
     <div className="all-tickets-container">
       <h1>All Tickets</h1>
-      <ul>
+      <div className="ticket-grid">
         {tickets.map((ticket) => (
-          <li key={ticket.id}>
-            <Link to={`/ticket/${ticket.id}`}>
-              <p>id: {ticket.id}</p>
-            </Link>
+          <div key={ticket.id} className="ticket">
+            <Link to={`/ticket/${ticket.id}`} className="ticket-link">
+              <p>ID: {ticket.id}</p>
               <p>Title: {ticket.title}</p>
               <p>Description: {ticket.description}</p>
               <p>Status: {ticket.status}</p>
-          </li>
+            </Link>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

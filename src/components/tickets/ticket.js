@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumpsterFire } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-
 library.add(faDumpsterFire);
+
 const Ticket = () => {
   const [ticket, setTicket] = useState({});
   const [newStatus, setNewStatus] = useState('');
@@ -29,7 +29,6 @@ const Ticket = () => {
   }, [fetchTicket]);
 
   const handleStatusChange = async () => {
-
     if (newStatus) { 
       try {
         await axios.put(`http://127.0.0.1:5000/edit_ticket/${id}`, {
@@ -40,7 +39,7 @@ const Ticket = () => {
       } catch (error) {
         console.error('Error updating status:', error);
       }
-    }else{
+    } else {
       alert("Please give a status")
       console.log("error no status given")
     }
@@ -64,34 +63,37 @@ const Ticket = () => {
         <p>Status: {ticket.status}</p>
       </div>
       <div>
-        <div className='TicketOptions'>
-          <p>Update your status below</p>
-          <input
-              type="radio"
-              id="option1"
-              name="statusOption"
-              value="In Progress"
-              checked={ticket.status === "In Progress"}
-              onChange={() => setNewStatus("In Progress")}
-            />
-            <label htmlFor="option1">In Progress</label>
-
-            <input
-              type="radio"
-              id="option2"
-              name="statusOption"
-              value="Finished"
-              checked={ticket.status === "Finished"}
-              onChange={() => setNewStatus("Finished")}
-            />
-            <label htmlFor="option2">Finished</label>
+        <div className='ticket-options'>
+          <p>Update your status below:</p>
+          <div className='radio-buttons'>
+            <label className='radio-button'>
+              <input
+                type="radio"
+                name="statusOption"
+                value="In Progress"
+                checked={newStatus === 'In Progress'}
+                onChange={() => setNewStatus('In Progress')}
+              />
+              <span>In Progress</span>
+            </label>
+            <label className='radio-button'>
+              <input
+                type="radio"
+                name="statusOption"
+                value="Finished"
+                checked={newStatus === 'Finished'}
+                onChange={() => setNewStatus('Finished')}
+              />
+              <span>Finished</span>
+            </label>
           </div>
-          <div className='TicketButtons'>
-            <button onClick={handleStatusChange}>Update Status</button>
-            <button onClick={handleDelete}>
-              <FontAwesomeIcon icon={faDumpsterFire} />
-            </button>
-          </div>
+        </div>
+        <div className='ticket-buttons'>
+          <button onClick={handleStatusChange}>Update Status</button>
+          <button onClick={handleDelete}>
+            <FontAwesomeIcon icon={faDumpsterFire} />
+          </button>
+        </div>
       </div>
     </div>
   );

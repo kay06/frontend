@@ -1,0 +1,29 @@
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.login-container {
+  background-color: #fff; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px; 
+}
+
+.btn {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%; 
+}
+
+
+   
