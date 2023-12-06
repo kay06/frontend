@@ -11,7 +11,7 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     axios
-      .post('http://127.0.0.1:5000/new_user', {
+      .post('https://kayleece-backend-5dd949158c3f.herokuapp.com/new_user', {
         name: name,
         email: email,
         password: password,

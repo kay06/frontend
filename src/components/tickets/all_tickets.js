@@ -11,7 +11,7 @@ const AllTickets = () => {
 
   const fetchTickets = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/tickets');
+      const response = await axios.get('https://kayleece-backend-5dd949158c3f.herokuapp.com/tickets');
       setTickets(response.data);
     } catch (error) {
       console.error('Error fetching tickets:', error);

@@ -16,7 +16,7 @@ const Ticket = () => {
 
   const fetchTicket = useCallback(async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:5000/ticket/${id}`);
+      const response = await axios.get(`https://kayleece-backend-5dd949158c3f.herokuapp.com/ticket/${id}`);
       setTicket(response.data);
       console.log("ticket success")
     } catch (error) {
@@ -31,7 +31,7 @@ const Ticket = () => {
   const handleStatusChange = async () => {
     if (newStatus) { 
       try {
-        await axios.put(`http://127.0.0.1:5000/edit_ticket/${id}`, {
+        await axios.put(`https://kayleece-backend-5dd949158c3f.herokuapp.com/edit_ticket/${id}`, {
           id: ticket.id,
           status: newStatus
         });
@@ -47,7 +47,7 @@ const Ticket = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/delete_ticket/${id}`);
+      await axios.delete(`https://kayleece-backend-5dd949158c3f.herokuapp.com/delete_ticket/${id}`);
       console.log('Ticket deleted successfully');
       navigate('/tickets')
     } catch (error) {

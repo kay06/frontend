@@ -23,7 +23,7 @@ const NewTicket = () => {
     const { title, description } = ticketDetails;
 
     axios
-      .post("http://127.0.0.1:5000/new_ticket", {
+      .post("https://kayleece-backend-5dd949158c3f.herokuapp.com/new_ticket", {
         user_id: "1",
         title: title,
         description: description

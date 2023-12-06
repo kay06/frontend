@@ -5,3 +5,5 @@ Some things I would like to look into adding in the future is:
     -a admin page where the admin is the only one to be able to edit, and delete tickets
     -a user permissions page to be able to easily edit users admin status
     -a no match page
+
+    
