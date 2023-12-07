@@ -23,7 +23,7 @@ function Home() {
         <div className="text-content">
           <p>Sign up Meow</p>
           <p>to Make a Ticket</p>
-          <Link to={`/signup`} className="signin-link">Sign Up</Link>        
+          <Link to={`/signup`}>Sign Up</Link>        
         </div>
       </div>
     </div>
