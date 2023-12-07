@@ -22,7 +22,7 @@ function Home() {
         <div className="text-content">
           <p>Sign up Meow</p>
           <p>to Make a Ticket</p>
-          <a href="/signup">Sign Up</a>        
+          <a href="https://kayleece-frontend-4bda42f50f70.herokuapp.com/signup">Sign Up</a>        
         </div>
       </div>
     </div>
