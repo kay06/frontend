@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import BootstrapCarousel from "../../bootstrap_features/bootstrap-carousel";
 import ComputerCat from "../../pictures/home/cat_computer.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,7 +23,7 @@ function Home() {
         <div className="text-content">
           <p>Sign up Meow</p>
           <p>to Make a Ticket</p>
-          <a href="https://kayleece-frontend-4bda42f50f70.herokuapp.com/signup">Sign Up</a>        
+          <Link to={`/signup`} className="signin-link">Sign Up</Link>        
         </div>
       </div>
     </div>

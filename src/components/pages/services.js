@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import BootstrapCarousel from "../../bootstrap_features/bootstrap-carousel";
 import Computer from "../../pictures/services/computer.jpg";
 import Electronics from "../../pictures/services/electronics.jpg";
@@ -50,7 +51,7 @@ function Services() {
         </div>
       </div>
       <div>
-        <a href="https://kayleece-frontend-4bda42f50f70.herokuapp.com/login" className="signin-link">Sign in to make a ticket now</a>
+      <Link to={`/login`} className="signin-link">Sign in to make a ticket now</Link>
       </div>
     </div>
   );
